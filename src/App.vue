@@ -46,7 +46,7 @@ export default {
 				this.numCorrect++
 			}
 			this.numTotal++
-		}
+		},
 	},
 	mounted: function() {
 		fetch('https://opentdb.com/api.php?amount=10&category=27&type=multiple', {
