@@ -5,7 +5,9 @@
 			<b-row>
 				<b-col sm="6" offset="3">
 					<QuestionBox
+						v-if='questions.length'
 						:currentQuestion='questions[index]'
+						:next='next '
 					/>
 				</b-col>
 			</b-row>
@@ -28,6 +30,11 @@ export default {
 			questions: [],
 			index: 0,
 		}
+	},
+	methods: {
+    next() {
+      this.index++
+    },
 	},
 	mounted: function() {
 		fetch('https://opentdb.com/api.php?amount=10&category=27&type=multiple', {
