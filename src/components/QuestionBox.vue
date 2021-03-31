@@ -11,6 +11,8 @@
 				<b-list-group-item
 				v-for="(answer, index) in answers"
 				:key="index"
+				@click="selectAnswer(index)"
+
 				>
 				{{ answer }}
 				</b-list-group-item>
@@ -34,6 +36,11 @@ export default {
 			answers.push(this.currentQuestion.correct_answer)
 			return answers
 		}
+	},
+	methods: {
+		selectAnswer(index) {
+		 this.selectedIndex = index
+		},
 	}
 }
 </script>
