@@ -16,18 +16,21 @@
 				</b-col>
 			</b-row>
 		</b-container>
+		<GameOver></GameOver>
 	</div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
 import QuestionBox from './components/QuestionBox.vue'
+import GameOver from './components/GameOver.vue'
 
 export default {
 	name: 'App',
 	components: {
 		Header,
-		QuestionBox
+		QuestionBox,
+		GameOver
 	},
 	data() {
 		return {
