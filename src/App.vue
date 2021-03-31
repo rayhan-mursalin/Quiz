@@ -46,7 +46,16 @@ export default {
 				this.numCorrect++
 			}
 			this.numTotal++
+			this.wrapUp()
 		},
+		wrapUp() {
+			if (this.numTotal === 10) {
+				confirm('Game over! Want to try again?')
+				this.numCorrect = 0
+				this.numTotal = 0
+				this.index = 0
+			}
+	}
 	},
 	mounted: function() {
 		fetch('https://opentdb.com/api.php?amount=10&category=27&type=multiple', {
