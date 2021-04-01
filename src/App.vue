@@ -16,7 +16,13 @@
 				</b-col>
 			</b-row>
 		</b-container>
-		<GameOver></GameOver>
+		<GameOver
+			v-if='this.numTotal === 10'
+			:index='index'
+			:numCorrect='numCorrect'
+			:numTotal='numTotal'
+		>
+		</GameOver>
 	</div>
 </template>
 
@@ -24,6 +30,7 @@
 import Header from './components/Header.vue'
 import QuestionBox from './components/QuestionBox.vue'
 import GameOver from './components/GameOver.vue'
+import {eventBus} from "./main.js";
 
 export default {
 	name: 'App',
@@ -49,16 +56,12 @@ export default {
 				this.numCorrect++
 			}
 			this.numTotal++
-			this.wrapUp()
 		},
-		wrapUp() {
-			if (this.numTotal === 10) {
-				confirm('Game over! Want to try again?')
-				this.numCorrect = 0
-				this.numTotal = 0
-				this.index = 0
-			}
-	}
+		startOver() {
+			this.numCorrect = 0
+			this.numTotal = 0
+			this.index = 0
+		}
 	},
 	mounted: function() {
 		fetch('https://opentdb.com/api.php?amount=10&category=27&type=multiple', {
@@ -70,6 +73,10 @@ export default {
 			.then((jsonData) => {
 				this.questions = jsonData.results
 			})
+
+		eventBus.$on('gameOver', () => {
+			this.startOver();
+		})
 	}
 }
 </script>

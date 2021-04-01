@@ -1,5 +1,5 @@
 <template>
-	<div class='question-box-container '>
+	<div class='question-box-container'>
 		<b-jumbotron>
 			<template #lead>
 			{{ currentQuestion.question }}
@@ -25,7 +25,10 @@
 			>
 				Submit
 			</b-button>
-			<b-button @click='next' variant="success">
+			<b-button
+				variant="success"
+				@click='next'
+			>
 				Next
 			</b-button>
 		</b-jumbotron>
