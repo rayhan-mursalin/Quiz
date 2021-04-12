@@ -1,29 +1,11 @@
 # quiz
 
-Quiz app built with Vue, Bootstrap vue, and Open trivia database API. Deployed with Netlify.
+Quiz app built with 
+- Vue
+- Bootstrap vue
+- Open trivia database API
 
-URL: https://cocky-wiles-093b31.netlify.app/
+Deployed with Netlify.
 
+Demo: https://rayhan-quiz-app.netlify.app/
 
-
-
-## Project setup
-```
-npm install
-```
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-### Compiles and minifies for production
-```
-npm run build
-```
-### Run your tests
-```
-npm run test
-```
-### Lints and fixes files
-```
-npm run lint
-```
